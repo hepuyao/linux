@@ -27,6 +27,7 @@ PluginSettings::PluginSettings(LXQt::Settings* settings, const QString &group, Q
 {
 	
 }
+
 PluginSettings* PluginSettingsFactory::create(LXQt::Settings *settings, const QString &group, QObject *parent/* = nullptr*/)
 {
     return new PluginSettings{settings, group, parent};

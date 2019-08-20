@@ -27,7 +27,8 @@ HEADERS += ukuipanelapplication.h ukuipanel.h panelpluginsmodel.h plugin.h plugi
     config/configpaneldialog.h \
     config/configpanelwidget.h \
     config/configpluginswidget.h \
-    windownotifier.h
+    windownotifier.h \
+    regexpinterface.h
 SOURCES += main.cpp ukuipanelapplication.cpp ukuipanel.cpp  panelpluginsmodel.cpp plugin.cpp pluginsettings.cpp \
     ukuimenu.cpp \
     config/addplugindialog.cpp \

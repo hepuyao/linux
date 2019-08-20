@@ -97,7 +97,7 @@ bool ConfigPanelDialog::loadPlugin()
         if(plugin)
         {
             qDebug()<<"instance plugin";
-            regExpInterface4 = qobject_cast<QDesignerCustomWidgetInterface*>(plugin);
+            regExpInterface4 = qobject_cast<ILXQtPanelPluginLibrary*>(plugin);
             if(regExpInterface4)
             {
                 qDebug()<<"fint the plugin";

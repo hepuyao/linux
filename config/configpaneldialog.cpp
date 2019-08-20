@@ -26,6 +26,9 @@
  * END_COMMON_COPYRIGHT_HEADER */
 
 #include "configpaneldialog.h"
+#include "QMessageBox"
+#include <QPluginLoader>
+
 
 ConfigPanelDialog::ConfigPanelDialog(UkuiPanel *panel, QWidget *parent):
     LXQt::ConfigDialog(tr("Configure Panel"), panel->settings(), parent),
@@ -50,8 +53,10 @@ ConfigPanelDialog::ConfigPanelDialog(UkuiPanel *panel, QWidget *parent):
 
 void ConfigPanelDialog::showConfigPanelPage()
 {
-    qDebug() << "show configPanel page";
+    qDebug() << "show configPanel page hepuyao ************88";
     showPage(mPanelPage);
+    loadPlugin();
+
 }
 
 void ConfigPanelDialog::showConfigPluginsPage()
@@ -63,4 +68,46 @@ void ConfigPanelDialog::showConfigPluginsPage()
 void ConfigPanelDialog::updateIconThemeSettings()
 {
     mPanelPage->updateIconThemeSettings();
+}
+
+void ConfigPanelDialog:: paintEvent(QPaintEvent *ev)
+{
+
+    QPainter paint(this);
+    paint.drawLine(10,10,50,10);
+}
+
+
+bool ConfigPanelDialog::loadPlugin()
+{
+    QDir pluginsDir("/home/hepuyao/2019/work/plugins/clock");
+
+    //QDir pluginsDir("/home/kylin/temp5");
+    //QDir pluginsDir("/home/kylin/temp/build-plugin-Imported_Kit-Release");
+
+    //遍历插件目录
+    foreach (QString fileName, pluginsDir.entryList(QDir::Files))
+    {
+
+        qDebug()<<fileName;
+        QMessageBox::information(this,"Error",fileName);
+
+        QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(fileName));
+        QObject *plugin = pluginLoader.instance();
+        if(plugin)
+        {
+            qDebug()<<"instance plugin";
+            regExpInterface4 = qobject_cast<QDesignerCustomWidgetInterface*>(plugin);
+            if(regExpInterface4)
+            {
+                qDebug()<<"fint the plugin";
+                this->layout();
+
+                regExpInterface4->createWidget(this);
+                return true;
+            }
+        }
+        qDebug()<<"isn't the plugin";
+    }
+    return false;
 }

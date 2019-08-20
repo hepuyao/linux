@@ -31,7 +31,9 @@
 #include "../ukuipanel.h"
 
 #include <QWidget>
-
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include "regexpinterface.h"
+#include "configpanelwidget.h"
 namespace Ui {
     class ConfigPluginsWidget;
 }
@@ -55,10 +57,16 @@ private slots:
     void showAddPluginDialog();
     void resetButtons();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::ConfigPluginsWidget *ui;
     QScopedPointer<AddPluginDialog> mAddPluginDialog;
     UkuiPanel *mPanel;
+    RegExpInterface *regExpInterface2;
+    QDesignerCustomWidgetInterface *regExpInterface3;
+
+    //bool loadPlugin();
 };
 
 #endif

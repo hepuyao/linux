@@ -33,6 +33,10 @@
 #include "../ukuipanel.h"
 
 #include <LXQt/ConfigDialog>
+#include <QPainter>
+#include "regexpinterface.h"
+#include <QtUiPlugin/QDesignerCustomWidgetInterface>
+#include <QDir>
 
 class ConfigPanelDialog : public LXQt::ConfigDialog
 {
@@ -44,10 +48,16 @@ public:
     void showConfigPanelPage();
     void showConfigPluginsPage();
     void updateIconThemeSettings();
+    bool loadPlugin();
+
 
 private:
     ConfigPanelWidget *mPanelPage;
     ConfigPluginsWidget *mPluginsPage;
+    QDesignerCustomWidgetInterface *regExpInterface4;
+protected:
+    void paintEvent(QPaintEvent *);
+
 };
 
 #endif // CONFIGPANELDIALOG_H

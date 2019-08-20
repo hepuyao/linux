@@ -35,6 +35,23 @@
 #include <HtmlDelegate>
 #include <QPushButton>
 #include <QItemSelectionModel>
+#include "regexpinterface.h"
+
+#include "configpaneldialog.h"
+
+
+
+#include <QPluginLoader>
+#include <QMessageBox>
+#include <QDir>
+#include <QDebug>
+
+
+
+
+
+
+
 
 ConfigPluginsWidget::ConfigPluginsWidget(UkuiPanel *panel, QWidget* parent) :
     QWidget(parent),
@@ -42,6 +59,15 @@ ConfigPluginsWidget::ConfigPluginsWidget(UkuiPanel *panel, QWidget* parent) :
     mPanel(panel)
 {
     ui->setupUi(this);
+#if 0
+    if(!loadPlugin())
+    {
+        //如果无法加载插件
+        QMessageBox::information(this,"Error","Could not load the plugin9");
+        ui->lineEdit->setEnabled(false);
+        ui->pushButton->setEnabled(false);
+    }
+#endif
 
     PanelPluginsModel * plugins = mPanel->mPlugins.data();
     {
@@ -77,6 +103,41 @@ ConfigPluginsWidget::~ConfigPluginsWidget()
     delete ui;
 }
 
+#if 0
+bool ConfigPluginsWidget::loadPlugin()
+{
+    QDir pluginsDir("/home/hepuyao/2019/work/plugins/addnum");
+    //QDir pluginsDir("/home/kylin/2019/8/1.资料/1.插件机制/2.高级插件，使用qt的库里的接口文件/build-customwidgetplugin-Imported_Kit-Release");
+
+
+
+    //遍历插件目录
+
+    foreach (QString fileName, pluginsDir.entryList(QDir::Files))
+    {
+        qDebug()<<fileName;
+        QMessageBox::information(this,"Error",fileName);
+
+        QPluginLoader pluginLoader(pluginsDir.absoluteFilePath(fileName));
+        QObject *plugin = pluginLoader.instance();
+        if(plugin)
+        {
+            qDebug()<<"instance plugin";
+
+            regExpInterface2 = qobject_cast<RegExpInterface*>(plugin);//**************
+            //regExpInterface3 = qobject_cast<QDesignerCustomWidgetInterface*>(plugin);
+            if(regExpInterface2)
+            {
+                qDebug()<<"fint the plugin";
+                return true;
+            }
+
+        qDebug()<<"isn't the plugin";
+        }
+    }
+
+}
+#endif
 void ConfigPluginsWidget::reset()
 {
 
@@ -118,4 +179,13 @@ void ConfigPluginsWidget::resetButtons()
     ui->pushButton_moveDown->setEnabled(hasSelection && !isLastSelected);
     ui->pushButton_pluginConfig->setEnabled(hasSelection && hasConfigDialog);
 #endif
+}
+
+void ConfigPluginsWidget::on_pushButton_clicked()
+{
+    QString str2 = regExpInterface2->add_num(ui->lineEdit->text());
+    ui->lab_2->setText(str2);
+
+
+
 }

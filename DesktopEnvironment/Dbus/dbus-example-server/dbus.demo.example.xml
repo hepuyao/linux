@@ -1,0 +1,57 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="Dbus.Demo.Example.Iterface">
+
+    <method name="set_integer">
+      <arg name="argc" type="i" direction="in"/>
+    </method>
+    <method name="set_string">
+      <arg name="argc" type="s" direction="in"/>
+    </method>
+
+    <method name="set_variantlist">
+      <arg name="cnt" type="i" direction="in"/>
+      <arg name="argc" type="a(issi)" direction="in"/>
+	  <annotation name="org.qtproject.QtDBus.QtTypeName.In1" value="QVariantList"/>
+    </method>
+
+    <method name="return_integer">
+      <arg name="cnt" type="i" direction="out"/>
+    </method>
+
+	<method name="return_bool">
+	  <arg name= "cnt_bool" type="b" direction="out"/>
+	</method>
+
+    <method name="return_string">
+      <arg name="name" type="s" direction="out"/>
+    </method>
+
+    <method name="return_variantlist">
+      <arg name="var" type="av" direction="out"/>
+    </method>
+
+	<method name = "return_integet_and_set_integer">
+		<arg name="argc_1" type="i" direction="in"/>
+		<arg name="argc_2" type="s" direction="in"/>
+		<arg type="i" direction="out"/>
+		<arg type="s" direction="out"/>
+	</method>
+
+	<method name = "return_integet_and_set_integet_2">
+		<arg name = "argc_1" type = "i" direction = "in"/>
+		<arg name = "argc_2" type = "i" direction = "out"/>
+	</method>
+
+	<method name = "return_string_and_set_string">
+		<arg name = "argc_1" type = "s" direction = "in"/>
+		<arg name = "argc_2" type = "s" direction = "out"/>
+	</method>
+
+	<method name = "set_variantlist_2">
+		<arg name = "argc" type = "a(issi)" direction = "in"/>
+		<annotation name="org.qtproject.QtDBus.QtTypeName.In0" value="QVariantList"/>
+		<arg name = "cc" type = "i" direction = "out"/>
+	</method>
+  </interface>
+</node>

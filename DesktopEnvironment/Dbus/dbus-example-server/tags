@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+DBUS_DEMO_EXAMPLE_STRUCT	dbus_demo_example_struct.h	5;"	d
+dbus_demo_example	dbus_demo_example.cpp	/^dbus_demo_example::dbus_demo_example()$/;"	f	class:dbus_demo_example
+dbus_demo_example	dbus_demo_example.h	/^class dbus_demo_example : public QObject$/;"	c
+dbus_demo_example_struct	dbus_demo_example_struct.h	/^struct dbus_demo_example_struct$/;"	s
+dbus_integer	dbus_demo_example.h	/^	int dbus_integer;$/;"	m	class:dbus_demo_example
+dbus_string	dbus_demo_example.h	/^	QString dbus_string;$/;"	m	class:dbus_demo_example
+dbus_variant	dbus_demo_example.h	/^	QVariant dbus_variant;$/;"	m	class:dbus_demo_example
+drv_ID	dbus_demo_example_struct.h	/^    int drv_ID;$/;"	m	struct:dbus_demo_example_struct
+full_name	dbus_demo_example_struct.h	/^    QString full_name;$/;"	m	struct:dbus_demo_example_struct
+main	main.cpp	/^int main(int argc, char *argv[])$/;"	f
+name	dbus_demo_example_struct.h	/^    QString name;$/;"	m	struct:dbus_demo_example_struct
+notify_mid	dbus_demo_example_struct.h	/^    int notify_mid;$/;"	m	struct:dbus_demo_example_struct
+operator <<	dbus_demo_example_struct.h	/^    friend QDBusArgument &operator<<(QDBusArgument &argument, const dbus_demo_example_struct&mystruct)$/;"	f	struct:dbus_demo_example_struct
+operator >>	dbus_demo_example_struct.h	/^    friend const QDBusArgument &operator>>(const QDBusArgument &argument, dbus_demo_example_struct&mystruct)$/;"	f	struct:dbus_demo_example_struct
+return_bool	dbus_demo_example.cpp	/^bool dbus_demo_example:: return_bool()$/;"	f	class:dbus_demo_example
+return_integer	dbus_demo_example.cpp	/^int dbus_demo_example:: return_integer()$/;"	f	class:dbus_demo_example
+return_integet_and_set_integer	dbus_demo_example.cpp	/^int dbus_demo_example:: return_integet_and_set_integer(int argc_1, const QString &argc_2, QString &out1)$/;"	f	class:dbus_demo_example
+return_integet_and_set_integet_2	dbus_demo_example.cpp	/^int dbus_demo_example:: return_integet_and_set_integet_2(int argc_1)$/;"	f	class:dbus_demo_example
+return_string	dbus_demo_example.cpp	/^QString dbus_demo_example:: return_string()$/;"	f	class:dbus_demo_example
+return_string_and_set_string	dbus_demo_example.cpp	/^QString dbus_demo_example:: return_string_and_set_string(const QString &argc_1)$/;"	f	class:dbus_demo_example
+return_variantlist	dbus_demo_example.cpp	/^QVariantList dbus_demo_example::return_variantlist()$/;"	f	class:dbus_demo_example
+set_integer	dbus_demo_example.cpp	/^void dbus_demo_example:: set_integer(int argc)$/;"	f	class:dbus_demo_example
+set_string	dbus_demo_example.cpp	/^void dbus_demo_example:: set_string(QString argc)$/;"	f	class:dbus_demo_example
+set_variantlist	dbus_demo_example.cpp	/^void dbus_demo_example:: set_variantlist(int cnt, QVariantList argc)$/;"	f	class:dbus_demo_example
+set_variantlist_2	dbus_demo_example.cpp	/^int dbus_demo_example:: set_variantlist_2(QVariantList argc)$/;"	f	class:dbus_demo_example
+value	dbus_demo_example.h	/^    QList<dbus_demo_example_struct>  value;$/;"	m	class:dbus_demo_example

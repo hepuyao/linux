@@ -1,0 +1,36 @@
+void outputMessage(QtMsgType type, const QMessageLogContext &context, const QString &msg)
+{
+
+    QString txt;
+          switch (type) {
+          //调试信息提示
+          case QtDebugMsg:
+                  txt = QString("Debug: %1").arg(msg);
+                  break;
+
+          //一般的warning提示
+          case QtWarningMsg:
+                  txt = QString("Warning: %1").arg(msg);
+          break;
+          //严重错误提示
+          case QtCriticalMsg:
+                  txt = QString("Critical: %1").arg(msg);
+          break;
+          //致命错误提示
+          case QtFatalMsg:
+                  txt = QString("Fatal: %1").arg(msg);
+                  abort();
+          }
+    QFile outFile("debuglog.txt");
+    outFile.open(QIODevice::WriteOnly | QIODevice::Append);
+    QTextStream ts(&outFile);  //
+    ts << txt << endl;
+}
+
+
+
+
+在mian函数中
+    //注册MessageHandler
+//    qInstallMessageHandler(outputMessage);
+

@@ -1,0 +1,47 @@
+//主要是获取一个标准色，这里取的是声音图标的标准色
+const QColor HighLightEffect::getCurrentSymbolicColor()
+{
+    QIcon symbolic = QIcon::fromTheme("audio-volume-high");
+    QPixmap pix = symbolic.pixmap(QSize(16, 16));
+    QImage img = pix.toImage();
+    for (int x = 0; x < img.width(); x++) {
+        for (int y = 0; y < img.height(); y++) {
+            QColor color = img.pixelColor(x, y);
+            if (color.alpha() > 0) {
+                symbolic_color = color;
+                return color;
+            }
+        }
+    }
+    return symbolic_color;
+}
+
+//如果传进来的图片的颜色跟标准色接近，那么就将其变为白色（高亮处理）
+//与标准色色差较大的像素点保持原本的颜色
+
+QPixmap HighLightEffect::drawSymbolicColoredPixmap(const QPixmap &source, const QColor &baseColor)
+{
+
+    QColor currentcolor=HighLightEffect::getCurrentSymbolicColor();
+    QImage img = source.toImage();
+    for (int x = 0; x < img.width(); x++) {
+        for (int y = 0; y < img.height(); y++) {
+            auto color = img.pixelColor(x, y);
+            if (color.alpha() > 0) {
+                int hue = color.hue();
+                if (qAbs(color.red()-currentcolor.red())<10 && qAbs(color.green()-currentcolor.green())<10 && qAbs(color.blue()-currentcolor.blue())<10) {
+                    color.setRed(255);
+                    color.setGreen(255);
+                    color.setBlue(255);
+                    img.setPixelColor(x, y, color);
+                }
+                else
+                {
+                    img.setPixelColor(x, y, color);
+                }
+            }
+        }
+    }
+    qDebug()<<endl;
+    return QPixmap::fromImage(img);
+}

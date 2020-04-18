@@ -1,0 +1,12 @@
+1.预处理-Pre-Processing
+gcc -E test.c -o test.i //.i文件
+
+2.编译-Compiling
+gcc -S test.i -o test.s //.s文件
+
+3.汇编-Assembling //.o文件
+gcc -c test.s -o test.o
+
+4.链接-Linking //bin文件
+gcc test.o -o test
+

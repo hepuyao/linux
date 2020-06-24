@@ -13,7 +13,7 @@ class Client: public QObject
 public:
     Client();
 public slots:
-    void client_get(void);
+    void client_get(int i);
 signals:
     void send_to_service(QString st);
 };

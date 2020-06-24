@@ -9,7 +9,7 @@
 class Service: public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "com.citos.test")
+    Q_CLASSINFO("D-Bus Interface", "com.ukui.panel.test")
 public:
     Service();
 public slots:

@@ -5,7 +5,9 @@ Service::Service()
     QDBusConnection::sessionBus().unregisterService("com.ukui.panel.plugins.service");
     QDBusConnection::sessionBus().registerService("com.ukui.panel.plugins.service");
     QDBusConnection::sessionBus().registerObject("/taskbar/click", this,QDBusConnection :: ExportAllSlots | QDBusConnection :: ExportAllSignals);
-//    QDBusConnection::sessionBus().connect(QString(), QString("/taskbar/click"), "com.ukui.panel.plugins.taskbar", "sendToUkuiDEApp", this, SLOT(service_get(QString)));
+    QDBusConnection::sessionBus().connect(QString(), QString("/taskbar/click"), "com.ukui.panel.plugins.taskbar", "sendToUkuiDEApp", this, SLOT(service_get(QString)));
+    QDBusMessage message =QDBusMessage::createSignal("/taskbar/click", "com.ukui.panel.test", "sendToUkuiDEApp");
+    QDBusConnection::sessionBus().send(message);
 }
 void Service::service_get(QString st)
 {
@@ -18,7 +20,7 @@ void service_listen()
     {
         getchar();
 //        qDebug() << "Message send!";
-        QDBusMessage message =QDBusMessage::createSignal("/taskbar/click", "com.ukui.panel.plugins.taskbar", "sendToUkuiDEApp");
+        QDBusMessage message =QDBusMessage::createSignal("/taskbar/click", "com.ukui.panel.test", "sendToUkuiDEApp");
         QDBusConnection::sessionBus().send(message);
     }
 }

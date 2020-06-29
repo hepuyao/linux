@@ -1,0 +1,58 @@
+版本号规则
+初次编译时将版本号中的ubuntu字样改为kylin。
+修改代码时，如果第一次修改，首先确保版本号中有kylin字样，如果没有，应该在末尾添加kylin0，接着在版本号末尾添加k1，后续修改时，将k后面的修订号递增。
+
+第一次改名（仅改名，没修改软件包内容）
+序号	软件包名	ubuntu版本号	kylin版本号	说明
+1	perl	5.22.1-9	5.22.1-9	保持一致
+2	unzip	6.0-20ubuntu1	6.0-20kylin1	将ubuntu替换为kylin
+3	xorg	1:7.7+13ubuntu3	1:7.7+13kylin3	将ubuntu替换为kylin，保持1:
+
+第二次修改（第一次修改软件包内容）
+序号	软件包名	kylin版本号（旧）	kylin版本号（旧）	说明
+1	perl	5.22.1-9	5.22.1-9kylin0k1	添加kylin0，并添加k1
+2	unzip	6.0-20kylin1	6.0-20kylin1k1	添加k1
+3	xorg	1:7.7+13kylin3	1:7.7+13kylin3k1	添加k1
+
+第三次修改（第二次修改软件包内容）
+序号	软件包名	kylin版本号	kylin版本号	说明
+1	perl	5.22.1-9kylin0k1	5.22.1-9kylin0k2	将k1增加为k2
+2	unzip	6.0-20kylin1k1	6.0-20kylin1k2	将k1增加为k2
+3	xorg	1:7.7+13kylin3k1	1:7.7+13kylin3k2	将k1增加为k2
+
+定制版本修改（以NF定制为例）
+序号	软件包名	kylin版本号	kylin版本号	说明
+1	perl	5.22.1-9kylin0k2	5.22.1-9kylin0k2nf1	NF定制版本修改，添加nf1
+2	unzip	6.0-20kylin1k2	6.0-20kylin1k2nf1	NF定制版本修改，添加nf1
+3	xorg	1:7.7+13kylin3k2	1:7.7+13kylin3k2nf1	NF定制版本修改，添加nf1
+
+_________________________________________________________________________
+修改dpkg和apt版本号比较规则
+修改dpkg和apt的版本号比较规则，使得kylin和ubuntu作为关键字进行版本号比较时，其比较的版本号大小相等。apt的patch还提供了测试用例，可以验证修改是否成功。以下只是修改思路，不一定在所有版本的dpkg和apt包上都能patch成功。
+
+dpkg
+[https://git.launchpad.dev/kylin/+source/dpkg/commit/?h=kylin/beijing-devel&id=b9e94b4fbac86dd9216ad22dd431732dcf44e565](https://git.launchpad.dev/kylin/+source/dpkg/commit/?h=kylin/beijing-devel&id=b9e94b4fbac86dd9216ad22dd431732dcf44e565)
+
+```cpp
+由于dpkg-checkbuilddeps是perl的，同时还要修改perl的版本号比较函数：
+--- scripts/Dpkg/Version.pm.bak    2020-05-08 09:15:48.113609849 +0800
++++ scripts/Dpkg/Version.pm    2020-05-08 09:29:57.231130798 +0800
+@@ -355,8 +355,12 @@
+ }
+ 
+ sub version_compare_string($$) {
+-    my @a = map { _version_order($_) } split(//, shift);
+-    my @b = map { _version_order($_) } split(//, shift);
++    my $a1 = shift;
++    my $b1 = shift;
++    $a1 =~ s/kylin/ubuntu/g;
++    $b1 =~ s/kylin/ubuntu/g;
++    my @a = map { _version_order($_) } split(//, $a1);
++    my @b = map { _version_order($_) } split(//, $b1);
+     while (1) {
+         my ($a, $b) = (shift @a, shift @b);
+         return 0 if not defined($a) and not defined($b);
+```
+
+apt
+[https://git.launchpad.dev/~xiewei/kylin/+source/apt/commit/?id=d67edcdeaa8497a28e480ecedcb07817b5a048a8](https://git.launchpad.dev/~xiewei/kylin/+source/apt/commit/?id=d67edcdeaa8497a28e480ecedcb07817b5a048a8)

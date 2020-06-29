@@ -31,7 +31,7 @@ _________________________________________________________________________
 修改dpkg和apt的版本号比较规则，使得kylin和ubuntu作为关键字进行版本号比较时，其比较的版本号大小相等。apt的patch还提供了测试用例，可以验证修改是否成功。以下只是修改思路，不一定在所有版本的dpkg和apt包上都能patch成功。
 
 dpkg
-[https://git.launchpad.dev/kylin/+source/dpkg/commit/?h=kylin/beijing-devel&id=b9e94b4fbac86dd9216ad22dd431732dcf44e565](https://git.launchpad.dev/kylin/+source/dpkg/commit/?h=kylin/beijing-devel&id=b9e94b4fbac86dd9216ad22dd431732dcf44e565)
+(https://git.launchpad.dev/kylin/+source/dpkg/commit/?h=kylin/beijing-devel&id=b9e94b4fbac86dd9216ad22dd431732dcf44e565)
 
 ```cpp
 由于dpkg-checkbuilddeps是perl的，同时还要修改perl的版本号比较函数：
@@ -55,4 +55,4 @@ dpkg
 ```
 
 apt
-[https://git.launchpad.dev/~xiewei/kylin/+source/apt/commit/?id=d67edcdeaa8497a28e480ecedcb07817b5a048a8](https://git.launchpad.dev/~xiewei/kylin/+source/apt/commit/?id=d67edcdeaa8497a28e480ecedcb07817b5a048a8)
+(https://git.launchpad.dev/~xiewei/kylin/+source/apt/commit/?id=d67edcdeaa8497a28e480ecedcb07817b5a048a8)

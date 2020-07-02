@@ -1,0 +1,8 @@
+关于字体颜色的设置
+需求：白色主题下字体显示为黑色，黑色主题下字体显示为白色
+
+1，color:palette(base)
+2，ui->menuBtn->setProperty("useIconHighlightEffect", true);
+    ui->menuBtn->setProperty("iconHighlightEffectMode", 1)
+
+其实qt原生的字体主题是支持该需求的，只是某些情况下（设置ｑｓｓ等造成此属性不可用）,因此需要处理一下

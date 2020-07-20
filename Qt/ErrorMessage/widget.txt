@@ -1,0 +1,2 @@
+Q: How to fix error: Must construct a QApplication before a QWidget
+A: You fix it by doing exactly what the error message says. You must construct a QApplication instance before you try to construct any QWidget objects. Usually the QApplication is constructed as the very first thing in your main() function.

@@ -1,0 +1,10 @@
+<schemalist gettext-domain="ukui-test">
+	<schema id="org.ukui.test.settings"  path="/org/ukui/test/settings/">
+	<key name="sessiondelay" type="i">
+            <default>3</default>
+            <summary>session delay</summary>
+            <description>session delay</description>
+    </key>
+    </schema>
+</schemalist>
+

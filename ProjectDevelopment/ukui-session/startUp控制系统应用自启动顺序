@@ -1,0 +1,47 @@
+void ModuleManager::startup()
+{
+    QGSettings *gsettings;
+    gsettings = new QGSettings("org.ukui.test.settings");
+    int delaytime=gsettings->get("sessiondelay").toInt()*1000;
+    qDebug() << "Start Initialization app: ";
+    for (XdgDesktopFileList::const_iterator i = mInitialization.constBegin(); i != mInitialization.constEnd(); ++i) {
+        startProcess(*i, true);
+    }
+    QTimer::singleShot(0, this, [=]() {
+        qDebug() << "Start window manager: " << mWindowManager.name();
+        startProcess(mWindowManager, true);
+        QTimer::singleShot(0, this, [=]() {
+            qDebug() << "Start panel: " << mPanel.name();
+            startProcess(mPanel, true);
+            qDebug() << "Start file manager: " << mFileManager.name();
+            startProcess(mFileManager, true);
+            QTimer::singleShot(delaytime, this, [=]() {
+                qDebug() << "Start desktop: ";
+                for (XdgDesktopFileList::const_iterator i = mDesktop.constBegin(); i != mDesktop.constEnd(); ++i) {
+                    startProcess(*i, true);
+                }
+
+                qDebug() << "Start application: ";
+                QFile file("/etc/xdg/autostart/kylin-nm.desktop");
+                for (XdgDesktopFileList::const_iterator i = mApplication.constBegin(); i != mApplication.constEnd(); ++i) {
+                    qDebug() << i->fileName();
+                    if(i->fileName()=="/etc/xdg/autostart/nm-applet.desktop" && file.exists()){
+                        qDebug() << "the kylin-nm exist so the nm-applet will not start";
+                        continue;
+                    }
+                    startProcess(*i, false);
+                }
+
+                qDebug() << "Start force application: ";
+                const QString ws = "ukui-window-switch";
+                XdgDesktopFile ukui_ws= XdgDesktopFile(XdgDesktopFile::ApplicationType,"ukui-window-switch", ws);
+                startProcess(ukui_ws,true);
+                for (XdgDesktopFileList::const_iterator i = mForceApplication.constBegin(); i != mForceApplication.constEnd(); ++i){
+                    startProcess(*i, true);
+                }
+            });
+        });
+    });
+
+}
+

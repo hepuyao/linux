@@ -1,3 +1,11 @@
+
+编包文章
+http://192.168.6.55/support/article/view/146
+版本号规则
+https://uq76pac93x.feishu.cn/docs/doccn5FmGiQtwIL1XEs5iChjT4c#
+debian快速编包指南
+http://192.168.6.55/support/article/view/175
+
 源码包签名
 1.生成 GPG key 用于上传源码的身份认证（如果已经生成过GPG key了可以跳过这一步）
 
@@ -92,3 +100,10 @@
 .sec文件的名称自定义，ID填写Key fingerprint 40位的那个长码
 
 在其他设备使用的时候仅需要gpg --import 1.sec  导入此密钥即可
+
+
+
+v10传包：
+dput dev:kylinos-desktop/v100-proposed
+v10-sp1   
+dput devppa:neokylin/kylinos-desktop/ukui3.0-v10-desktop

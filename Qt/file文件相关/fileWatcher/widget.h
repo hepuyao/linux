@@ -4,9 +4,11 @@
 #include <QWidget>
 #include <QFileSystemWatcher>
 #include <QDir>
-namespace Ui {
-class Widget;
-}
+#include <QMap>
+
+//namespace Ui {
+//class Widget;
+//}
 
 class Widget : public QWidget
 {
@@ -17,8 +19,10 @@ public:
     ~Widget();
 
 private:
-    Ui::Widget *ui;
+//    Ui::Widget *ui;
     QFileSystemWatcher *fsWatcher;
+    QMap<QString, QStringList> m_currentContentsMap; // 当前每个监控的内容目录列表
+    void directoryUpdated(const QString &path);
 };
 
 #endif // WIDGET_H

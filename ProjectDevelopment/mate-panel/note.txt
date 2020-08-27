@@ -1,0 +1,6 @@
+//笔记记录
+任务栏调整相关gsetting
+
+gsettings set org.mate.panel.toplevel:/org/mate/panel/toplevels/bottom/ orientation left
+
+

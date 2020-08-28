@@ -1,0 +1,197 @@
+关于任务栏分组的问题
+在设置了autogroup之后，wnck做了大部分的工作
+
+GEnumValue _wnck_tasklist_grouping_type_values定义了这几种分组方式
+【ukui-panel可能也会也面临自动分组的局面】
+
+
+有时间看一下wnck自动分组的逻辑
+
+mate-panel 今天的问题：连接主屏，在没有监听到主屏的情况下，设置左边的屏幕为主屏，
+
+设置分组属性
+gsettings set org.mate.panel.applet.window-list:/org/mate/panel/objects/window-list/prefs/ group-windows always
+设置左右属性
+gsettings set org.mate.panel.toplevel:/org/mate/panel/toplevels/bottom/ orientation left
+
+打印
+syslog(LOG_ERR,"**********************\n");
+journalctl -f
+
+0828
+已经定位到是wnck_tasklist_layout的问题
+/* returns the maximal possible button width (i.e. if you
+ * don't want to stretch the buttons to fill the alloctions
+ * the width can be smaller) */
+static int
+wnck_tasklist_layout (GtkAllocation *allocation,
+                      int            max_width,
+                      int            max_height,
+                      int            n_buttons,
+                      GtkOrientation orientation,
+                      int           *n_cols_out,
+                      int           *n_rows_out)
+{}
+这个函数返回的是最大宽度这就很离谱
+
+终于啊，找到解决的入口了
+就是这个函数
+
+
+现在发现
+在横向的时候，是没有问题的，allocation->width / n_cols  就是
+
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+这个函数似乎获取到的allocation对横向很不友好
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+Retrieves the widget’s allocation.
+
+Note, when implementing a GtkContainer: a widget’s allocation will be its “adjusted” allocation, that is, the widget’s parent container typically calls gtk_widget_size_allocate() with an allocation, and that allocation is then adjusted (to handle margin and alignment for example) before assignment to the widget. gtk_widget_get_allocation() returns the adjusted allocation that was actually assigned to the widget. The adjusted allocation is guaranteed to be completely contained within the gtk_widget_size_allocate() allocation, however. So a GtkContainer is guaranteed that its children stay inside the assigned bounds, but not that they have exactly the bounds the container assigned. There is no way to get the original allocation assigned by gtk_widget_size_allocate(), since it isn’t stored; if a container implementation needs that information it will have to track it itself.
+
+Parameters
+
+widget
+a GtkWidget
+ 
+allocation
+a pointer to a GtkAllocation to copy to.
+
+
+现在发现
+在横向的时候，是没有问题的，allocation->width / n_cols  就是
+
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+这个函数似乎获取到的allocation对横向很不友好
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+Retrieves the widget’s allocation.
+
+Note, when implementing a GtkContainer: a widget’s allocation will be its “adjusted” allocation, that is, the widget’s parent container typically calls gtk_widget_size_allocate() with an allocation, and that allocation is then adjusted (to handle margin and alignment for example) before assignment to the widget. gtk_widget_get_allocation() returns the adjusted allocation that was actually assigned to the widget. The adjusted allocation is guaranteed to be completely contained within the gtk_widget_size_allocate() allocation, however. So a GtkContainer is guaranteed that its children stay inside the assigned bounds, but not that they have exactly the bounds the container assigned. There is no way to get the original allocation assigned by gtk_widget_size_allocate(), since it isn’t stored; if a container implementation needs that information it will have to track it itself.
+
+Parameters
+
+widget
+a GtkWidget
+ 
+allocation
+a pointer to a GtkAllocation to copy to.
+
+
+现在发现
+在横向的时候，是没有问题的，allocation->width / n_cols  就是
+
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+这个函数似乎获取到的allocation对横向很不友好
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+Retrieves the widget’s allocation.
+
+Note, when implementing a GtkContainer: a widget’s allocation will be its “adjusted” allocation, that is, the widget’s parent container typically calls gtk_widget_size_allocate() with an allocation, and that allocation is then adjusted (to handle margin and alignment for example) before assignment to the widget. gtk_widget_get_allocation() returns the adjusted allocation that was actually assigned to the widget. The adjusted allocation is guaranteed to be completely contained within the gtk_widget_size_allocate() allocation, however. So a GtkContainer is guaranteed that its children stay inside the assigned bounds, but not that they have exactly the bounds the container assigned. There is no way to get the original allocation assigned by gtk_widget_size_allocate(), since it isn’t stored; if a container implementation needs that information it will have to track it itself.
+
+Parameters
+
+widget
+a GtkWidget
+ 
+allocation
+a pointer to a GtkAllocation to copy to.
+
+
+现在发现
+在横向的时候，是没有问题的，allocation->width / n_cols  就是
+
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+这个函数似乎获取到的allocation对横向很不友好
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+Retrieves the widget’s allocation.
+
+Note, when implementing a GtkContainer: a widget’s allocation will be its “adjusted” allocation, that is, the widget’s parent container typically calls gtk_widget_size_allocate() with an allocation, and that allocation is then adjusted (to handle margin and alignment for example) before assignment to the widget. gtk_widget_get_allocation() returns the adjusted allocation that was actually assigned to the widget. The adjusted allocation is guaranteed to be completely contained within the gtk_widget_size_allocate() allocation, however. So a GtkContainer is guaranteed that its children stay inside the assigned bounds, but not that they have exactly the bounds the container assigned. There is no way to get the original allocation assigned by gtk_widget_size_allocate(), since it isn’t stored; if a container implementation needs that information it will have to track it itself.
+
+Parameters
+
+widget
+a GtkWidget
+ 
+allocation
+a pointer to a GtkAllocation to copy to.
+
+
+现在发现
+在横向的时候，是没有问题的，allocation->width / n_cols  就是
+
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+这个函数似乎获取到的allocation对横向很不友好
+
+
+gtk_widget_get_allocation ()
+
+void
+gtk_widget_get_allocation (GtkWidget *widget,
+                           GtkAllocation *allocation);
+Retrieves the widget’s allocation.
+
+Note, when implementing a GtkContainer: a widget’s allocation will be its “adjusted” allocation, that is, the widget’s parent container typically calls gtk_widget_size_allocate() with an allocation, and that allocation is then adjusted (to handle margin and alignment for example) before assignment to the widget. gtk_widget_get_allocation() returns the adjusted allocation that was actually assigned to the widget. The adjusted allocation is guaranteed to be completely contained within the gtk_widget_size_allocate() allocation, however. So a GtkContainer is guaranteed that its children stay inside the assigned bounds, but not that they have exactly the bounds the container assigned. There is no way to get the original allocation assigned by gtk_widget_size_allocate(), since it isn’t stored; if a container implementation needs that information it will have to track it itself.
+
+Parameters
+
+widget
+a GtkWidget
+ 
+allocation
+a pointer to a GtkAllocation to copy to.
+
+
+所以传入wnck_tasklist_layout  的fake_allocation 是不准确的
+因此wnck_tasklist_layout在处理任务栏居左右的时候，获取可用高度异常（过小），导致auto-group模式下，窗口不得不变成总是分组的情况

@@ -1,0 +1,83 @@
+1.创建程序参数
+ukuipanelapplication.cpp
+在构造函数里创建参数（100行左右）
+QCommandLineOption monitorRoleOption("m");
+parser.addOption(monitorRoleOption);
+
+2.快速启动栏刷新
+把析构函数和构造函数的部分拿出组成的快速启动栏的重置功能
+ukuiquicklaunch.cpp
+
+void UKUIQuickLaunch::resetquicklaunch(){
+    for(auto it = mVBtn.begin(); it != mVBtn.end();)
+    {
+        (*it)->deleteLater();
+        mVBtn.erase(it);
+    }
+    QString desktop;
+    QString file;
+    QString execname;
+    QString exec;
+    QString icon;
+    const auto apps = mPlugin->settings()->readArray("apps");
+    for (const QMap<QString, QVariant> &app : apps)
+    {
+        desktop = app.value("desktop", "").toString();
+        file = app.value("file", "").toString();
+        if (!desktop.isEmpty())
+        {
+            XdgDesktopFile xdg;
+           !xdg.load(desktop);
+            addButton(new QuickLaunchAction(&xdg, this));
+        }
+        else if (! file.isEmpty())
+        {
+            addButton(new QuickLaunchAction(file, this));
+        }
+        else
+        {
+            execname = app.value("name", "").toString();
+            exec = app.value("exec", "").toString();
+            icon = app.value("icon", "").toString();
+            addButton(new QuickLaunchAction(execname, exec, icon, this));
+        }
+    }
+    int i = 0;
+    int counts = countOfButtons();
+    int shows = (counts < 5 ? counts : 5);
+    while (i != counts && shows) {
+        QuickLaunchButton *b = qobject_cast<QuickLaunchButton*>(mLayout->itemAt(i)->widget());
+        if (shows) {
+            b->setHidden(0);
+            qcklchShow.insert(show_num++, b);
+            --shows;
+        } else {
+            b->setHidden(1);
+        }
+        ++i;
+    }
+    realign();
+    mLayout->addWidget(tmpwidget);
+}
+
+3.用gsetting使命令行对快速启动栏设置
+在ukuipanelapplication.cpp中设置gsetting
+if(parser.isSet(monitorRoleOption)){
+        if(gsettings->get(PANEL_RESETQ_KEY).toBool()){
+            gsettings->set(PANEL_RESETQ_KEY,false);
+        }
+        else
+            gsettings->set(PANEL_RESETQ_KEY,true);
+    }
+在ukuiquicklaunch.cpp中监听gsetting
+
+const QByteArray resetq_id(PANEL_SETTINGS);
+    if(QGSettings::isSchemaInstalled(resetq_id)){
+        gsettings = new QGSettings(resetq_id);
+        }
+    connect(gsettings, &QGSettings::changed, this, [=] (const QString &key){
+        if(key==PANEL_RESETQ_KEY)
+        {
+            resetquicklaunch();
+        }
+    });

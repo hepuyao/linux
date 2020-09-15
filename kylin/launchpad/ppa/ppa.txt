@@ -1,0 +1,9 @@
+v10.1   
+dput dev:kylin-desktop/v101-proposed
+
+v10：
+dput dev:kylinos-desktop/v100-proposed
+
+v10-sp1
+dput devppa:neokylin/kylinos-desktop/ukui3.0-v10-desktop
+

@@ -1,0 +1,14 @@
+Q:
+fatal error: QDBusInterface: 没有那个文件或目录
+A:
+
+
+Q:
+没有规则可制作目标“Qt5Xdg-NOTFOUND”，由“plugin-segmentation/libsegmentation.so” 需求
+A:
+发现在编包的时候报错如下：
+dpkg-shlibdeps: error: no dependency information found for /usr/local/lib/libQt5Xdg.so.3 (used by debian/ukui-panel/usr/bin/ukui-panel)
+Hint: check if the library actually comes from a package
+
+删除/usr/local/lib/libQt5Xdg.so.3 ，接着在build 目录 cmake .. && make -j8 的时候依然出错，but  debuild 成功，用debuild生成的deb包安装也没得问题，可是此时这个错依然存在，而且没有丝毫改变，此时已经基本可以判定是与安装方式有关
+1

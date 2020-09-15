@@ -1,0 +1,5 @@
+更改CMakeList文件 添加一个插件文件夹
+更改新插件的CMakeList文件，改插件名称
+更改panel/plugin.cpp    加载插件的时候加载改插件 (2处)
+更改新插件的 desktop.in文件
+更改新插件的 类名

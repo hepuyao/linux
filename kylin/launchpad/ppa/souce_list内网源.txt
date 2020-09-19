@@ -1,0 +1,60 @@
+V10.1内网源：
+deb http://archive.launchpad.dev/kylin v101 main restricted universe multiverse
+deb http://archive.launchpad.dev/kylin-desktop v101 main restricted universe multiverse
+deb http://archive.launchpad.dev/kylin-desktop v101-updates main restricted universe multiverse
+deb http://archive.launchpad.dev/kylin-desktop v101-proposed main restricted universe multiverse
+
+
+V10内网源（arm&x86）：
+deb http://archive.launchpad.dev/kord juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/kord juniper-security main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop v100 main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop v100-updates main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop v100-proposed main restricted universe multiverse
+（sp1-ppa）deb http://ppa.launchpad.dev/neokylin/ukui3.0-v10-desktop/kylinos-desktop v100 main
+
+
+V10内网源（mips）：
+deb http://archive.launchpad.dev/kord-loongson juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/kord-loongson juniper-proposed main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop v100 main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop v100-updates main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop v100-proposed main restricted universe multiverse
+（sp1-ppa）deb http://ppa.launchpad.dev/neokylin/ukui3.0-v10-desktop/kylinos-desktop v100 main
+
+
+V4-sp4内网源（arm&x86）：
+deb http://archive.launchpad.dev/kord juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/kord juniper-security main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp4 main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp4-updates main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp4-proposed main restricted universe multiverse
+
+V4-sp4内网源（mips）：
+deb http://archive.launchpad.dev/kord-loongson juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/kord-loongson juniper-proposed main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp4 main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp4-updates main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp4-proposed main restricted universe multiverse
+
+
+V4-sp3内网源：
+deb http://archive.launchpad.dev/kord juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/kord juniper-security main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp3 main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp3-updates main restricted universe multiverse
+deb http://archive.launchpad.dev/kylinos-desktop juniper.sp3-proposed main restricted universe multiverse
+
+
+V4-sp2内网源：
+deb http://archive.launchpad.dev/kord juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/kord juniper-security main restricted universe multiverse
+deb http://archive.launchpad.dev/neokylin juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/neokylin juniper-updates main restricted universe multiverse
+
+
+V4-sp1内网源：
+deb http://archive.launchpad.dev/kord juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/kord juniper-security main restricted universe multiverse
+deb http://archive.launchpad.dev/neokylin juniper main restricted universe multiverse
+deb http://archive.launchpad.dev/neokylin juniper-sp1 main restricted universe multiverse

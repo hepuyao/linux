@@ -1,0 +1,36 @@
+dput上传source到PPA里
+使用dput命令上传source：
+
+ dput devppa:<owner>/neokylin/<ppaname> <source.changes>
+# 比如当前4.0-1c版本的目标PPA是neokylin/neokylin/4.0-1c
+ 上传前需要先在/etc/dput.cf或者~/.dput.cf里添加
+
+[devppa]
+
+fqdn = ppa.launchpad.dev:2121
+
+method = ftp
+
+incoming = ~%(devppa)s
+
+login = anonymous
+
+
+dput上传source到正式版本
+使用dput命令上传source：
+
+ dput dev:<distribution> <source.changes>
+# 比如主版本的distribution名称为neokylin
+
+ 要上传到4.0-2系列的source，要把changelog里的xenial或者juniper改为juniper-proposed。
+ 上传前需要先在/etc/dput.cf或者~/.dput.cf里添加
+
+[dev]
+
+fqdn = ppa.launchpad.dev:2121
+
+method = ftp
+
+incoming = /%(dev)s
+
+login = anonymous

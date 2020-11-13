@@ -1,0 +1,6 @@
+quilt new ***.patch  新建补丁
+quilt add xxx.xxx 添加需要打补丁的文件
+修改 xxx.xx
+quilt diff 查看修改内容
+dch
+dput

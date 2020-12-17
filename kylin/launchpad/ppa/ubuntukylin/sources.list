@@ -1,0 +1,15 @@
+deb http://archive.launchpad.dev/kylin-desktop v101-proposed main restricted universe multiverse
+deb-src http://archive.launchpad.dev/kylin-desktop v101-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ groovy main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ groovy main restricted universe multiverse #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ groovy-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ groovy-updates main restricted universe multiverse #Added by software-properties
+deb http://mirrors.aliyun.com/ubuntu/ groovy-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ groovy-security main restricted universe multiverse #Added by software-properties
+
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.

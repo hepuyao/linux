@@ -1,0 +1,15 @@
+正常来讲，任务栏窗口切换插件显示的是窗口管理器控制的窗口
+任务栏在此基础上屏蔽了多种窗口
+1.屏蔽了那些属性为NET::SkipTaskbar 状态的窗口（这里的skiptaskbar属于窗口状态
+  通过窗口状态屏蔽窗口的时候可以通过窗口管理器给损态窗口打上一个skipTaskbar的标签外，应用本身也可以通过设置窗口跳过任务栏NET::SkipTaskbar的属性来跳过任务栏
+2.屏蔽了部分类型的窗口，例如comboxMASK，应用可以
+1.跳过任务栏显示的窗口
+在应用中标记就是使用NET::SkipTaskbar的属性，这样的话窗口虽然依然正常归属窗口管理器管理，但是可以不在任务栏显示
+建议通过kf5的接口实现
+主窗口添加 KWindowSystem::setState(winId(), NET::SkipTaskbar | NET::SkipPager); 即可
+使用kf5的接口需要在pro文件添加：
+QT       += KWindowSystem
+头文件添加
+#include "kwindowsystem.h"
+
+2.

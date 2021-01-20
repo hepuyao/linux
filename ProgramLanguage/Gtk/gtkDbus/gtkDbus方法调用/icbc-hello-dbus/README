@@ -1,0 +1,18 @@
+1. ./autogen.sh
+
+
+2. ./confgiure --prefix=/usr
+
+
+3. make -j8
+
+
+4. sudo make install
+
+
+5. d-feet验证，三个方法:
+  方法一，ExitService，退出session dbus service
+  方法二，GetSecurityConfigPath，返回ukcc的配置文件路径
+  方法三，ReloadSecurityConfig，发射Reload信号。客户端绑定该信号，收到信号后执行reload操作
+
+PS: 查找ukcc关键字替换相关内容即可

@@ -1,0 +1,39 @@
+测试运行： gcc cJSON.c cJSON_Func.c -o test -lm && ./test
+
+初始化Json文件：
+initJsonFile(json路径(./xxxx/xx/xxxx.json)，插件名称(ukui-panel,ukcc...))
+
+查询是否存在该包或该应用
+int containsPkg(char* PkgName);   0不存在  1存在
+int containsApp(char* AppName);   0不存在  1存在
+
+获取所有的配置信息:
+{
+	PkgNode* head = getPkgListHead(); //记得判空，normal状态自动返回空值,其他状态自动读取名单里的信息
+	if (head == NULL)
+		normal 状态
+}
+char* mode = getMode(); //获取黑/白/正常模式
+cJSON root = cJSON* getRoot()  //用于进行自定义的信息处理
+
+终端打印信息：
+printAllPkgNames();
+printAllAppNamesAndPaths();
+
+以下结构体均已链表实现
+包结构体：
+typedef struct _Pkg {
+	char* name;
+	struct _App *entries;
+	struct _Pkg *next;
+} PkgNode;
+
+包内所含有的应用结构体：
+typedef struct _App {
+	char* name;
+	char* path;
+	struct _App *next;
+}
+
+最后一定要记得释放内存
+deleteAllData();

@@ -1,0 +1,44 @@
+{
+	"ukui-panel":{
+		"mode": "blacklist", 
+		"blacklist":[{ 
+			"pkgname": "asdasd", 
+			"entries": [
+				{
+					"appname": "peony", 
+					"path": "/usr/share/applications/peony.desktop"
+				},
+				{
+					"appname": "firefox",
+					"path": "/usr/share/applications/firefox.desktop"
+				},
+					{
+						"appname": "ppp", 
+						"path": "/usr/share/applications/peony.desktop"
+					},
+					{
+						"appname": "aaasd", 
+						"path": "/usr/share/applications/peony.desktop"
+					}
+			]
+		},
+		{ 
+				"pkgname": "ddddasd", 
+				"entries":
+					[{
+						"appname": "speony", 
+						"path": "/usr/share/applications/peony.desktop"
+					}]
+			}],
+		"whitelist": 
+			[{ 
+				"pkgname": "asd", 
+				"entries":
+					[{
+						"appname": "peony", 
+						"path": "/usr/share/applications/peony.desktop"
+					}]
+			}]
+		}
+}
+

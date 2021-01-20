@@ -1,0 +1,32 @@
+{
+    "ukcc":[
+        {
+            "nane": "1一级菜单",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "nane": "2一级菜单",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        }
+    ]
+}

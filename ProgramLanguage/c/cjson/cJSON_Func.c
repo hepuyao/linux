@@ -175,7 +175,7 @@ void printAllAppNamesAndPaths() {
                 AppNode* _temp = temp->entries;
 		printf("Pkg: %s\n", temp->name);
                 while(_temp) {
-                        printf("    App: %s\n    Path: %s\n", _temp->name, _temp->path);
+                        printf("Path: %s\n", _temp->path);
 			_temp = _temp->next;
                 }
                 temp = temp->next;
@@ -206,11 +206,12 @@ void deleteAllData() {
 
 int main() {
 	cJSON *root = (cJSON*)malloc(sizeof(cJSON));
-	initJsonFile("./ukui-panel-security-config.json", "ukui-panel");
+	initJsonFile("/home/kylin/.config/mate-panel-security-config.json", "mate-panel");
 	//item = initJsonFile("./ukcc.json", "ukcc");
+	printf("get Mode is : %s \n",getMode());
 	getJsonInfo();
 	if (head == NULL) return 0;
-	printf("\nif contains Pkg\"ddfdasd\" ?\n%d\nif contains App \"speony\" ?\n%d\n\n", containsPkg("ddfdasd"),containsApp("speony"));
+	//printf("\nif contains Pkg\"ddfdasd\" ?\n%d\nif contains App \"speony\" ?\n%d\n\n", containsPkg("ddfdasd"),containsApp("speony"));
 	printAllAppNamesAndPaths();
 	deleteAllData();
 	return 0;

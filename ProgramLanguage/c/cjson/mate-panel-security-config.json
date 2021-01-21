@@ -1,5 +1,5 @@
 {
-	"ukui-panel":{
+	"mate-panel":{
 		"mode": "blacklist", 
 		"blacklist":[{ 
 			"pkgname": "asdasd", 
@@ -14,11 +14,11 @@
 				},
 					{
 						"appname": "ppp", 
-						"path": "/usr/share/applications/peony.desktop"
+						"path": "/usr/share/applications/ppp.desktop"
 					},
 					{
-						"appname": "aaasd", 
-						"path": "/usr/share/applications/peony.desktop"
+						"appname": "kylin-video", 
+						"path": "/usr/share/applications/kylin-video.desktop"
 					}
 			]
 		},
@@ -26,8 +26,8 @@
 				"pkgname": "ddddasd", 
 				"entries":
 					[{
-						"appname": "speony", 
-						"path": "/usr/share/applications/peony.desktop"
+						"appname": "meld", 
+						"path": "/usr/share/applications/meld.desktop"
 					}]
 			}],
 		"whitelist": 
@@ -35,8 +35,8 @@
 				"pkgname": "asd", 
 				"entries":
 					[{
-						"appname": "peony", 
-						"path": "/usr/share/applications/peony.desktop"
+						"appname": "pluma", 
+						"path": "/usr/share/applications/pluma.desktop"
 					}]
 			}]
 		}

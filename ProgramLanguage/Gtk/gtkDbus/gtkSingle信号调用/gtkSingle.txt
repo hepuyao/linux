@@ -1,0 +1,13 @@
+       gpointer arguments;
+        GDBusConnection *connection;
+        connection=g_bus_get_sync(G_BUS_TYPE_SYSTEM,NULL,NULL);
+        g_dbus_connection_signal_subscribe(connection,
+                            "org.freedesktop.login1",
+                            "org.freedesktop.login1.Manager",
+                            "PrepareForSleep",
+                            "/org/freedesktop/login1",
+                            NULL,
+                            G_DBUS_SIGNAL_FLAGS_NONE,
+                            panel_reload,
+                            arguments,
+                            NULL);

@@ -1,0 +1,276 @@
+Attaching 3 probes...
+11:05:50
+@[cupsd]: 1
+@[chromium-browse]: 2
+@[bpftrace]: 2
+@[threaded-ml]: 2
+@[ukui-volume-con]: 3
+@[ThreadPoolSingl]: 3
+@[lpqd]: 4
+@[QThread]: 6
+@[fcitx]: 16
+@[sogouImeService]: 28
+@[ThreadPoolForeg]: 29
+@[XEventMonitor]: 40
+
+11:06:05
+@[kylinssoclient]: 1
+@[QThread]: 2
+@[ThreadPoolSingl]: 3
+@[polkitd]: 5
+@[(o-client)]: 5
+@[bash]: 13
+@[sh]: 14
+@[fcitx]: 26
+@[systemd-journal]: 35
+@[sogouImeService]: 42
+@[kylin-sso-clien]: 51
+@[CacheThread_Blo]: 60
+@[cron]: 90
+@[chromium-browse]: 104
+@[ThreadPoolForeg]: 2288
+
+11:06:20
+@[QThread]: 2
+@[fcitx]: 2
+@[ThreadPoolSingl]: 3
+@[sogouImeService]: 6
+@[chromium-browse]: 13
+@[ThreadPoolForeg]: 75
+
+11:06:35
+@[nmbd]: 2
+@[ThreadPoolForeg]: 4
+@[ThreadPoolSingl]: 6
+@[QThread]: 10
+@[fcitx]: 28
+@[sogouImeService]: 46
+@[XEventMonitor]: 339
+
+11:06:50
+@[fcitx]: 2
+@[threaded-ml]: 2
+@[ukui-volume-con]: 3
+@[ThreadPoolSingl]: 3
+@[sogouImeService]: 5
+@[CacheThread_Blo]: 5
+@[QThread]: 8
+@[chromium-browse]: 10
+@[killall]: 15
+@[ukui-panel]: 22
+@[ThreadPoolForeg]: 24
+
+11:07:05
+@[systemd-journal]: 1
+@[kylinssoclient]: 1
+@[ThreadPoolSingl]: 3
+@[polkitd]: 5
+@[(o-client)]: 5
+@[ThreadPoolForeg]: 13
+@[ukui-panel]: 18
+@[QThread]: 18
+@[fcitx]: 25
+@[ChromiumEnv.Sto]: 34
+@[sogouImeService]: 36
+@[kylin-sso-clien]: 51
+@[XEventMonitor]: 240
+
+11:07:20
+@[ThreadPoolForeg]: 3
+@[ThreadPoolSingl]: 3
+@[QThread]: 12
+@[killall]: 15
+@[fcitx]: 20
+@[ukui-panel]: 36
+@[sogouImeService]: 39
+@[XEventMonitor]: 168
+
+11:07:35
+@[sd-resolve]: 2
+@[sogouImeService]: 4
+@[ThreadPoolForeg]: 4
+@[fcitx]: 4
+@[ThreadPoolSingl]: 6
+@[QThread]: 20
+@[XEventMonitor]: 648
+
+11:07:50
+@[ThreadPoolSingl]: 3
+@[ThreadPoolForeg]: 5
+@[QThread]: 28
+@[XEventMonitor]: 874
+
+11:08:05
+@[kylinssoclient]: 1
+@[python3]: 2
+@[ThreadPoolSingl]: 3
+@[systemd-journal]: 3
+@[polkitd]: 5
+@[(o-client)]: 5
+@[bash]: 13
+@[sh]: 20
+@[ThreadPoolForeg]: 25
+@[QThread]: 29
+@[kylin-sso-clien]: 51
+@[cron]: 90
+@[XEventMonitor]: 376
+@[fcitx]: 604
+@[sogouImeService]: 828
+
+11:08:20
+@[CacheThread_Blo]: 5
+@[ThreadPoolSingl]: 6
+@[ThreadPoolForeg]: 7
+@[sh]: 14
+@[dpkg]: 19
+@[fcitx]: 24
+@[sogouImeService]: 37
+@[ukui-sidebar]: 75
+@[XEventMonitor]: 81
+@[chromium-browse]: 242
+@[python3]: 287
+
+11:08:35
+@[ThreadPoolForeg]: 3
+@[ThreadPoolSingl]: 3
+@[fcitx]: 42
+@[XEventMonitor]: 64
+@[sogouImeService]: 76
+@[python3]: 147
+
+11:08:50
+@[pool-geoclue]: 2
+@[ThreadPoolSingl]: 3
+@[ThreadPoolForeg]: 9
+@[sogouImeService]: 46
+@[fcitx]: 82
+@[python3]: 793
+
+11:09:05
+@[systemd-journal]: 1
+@[threaded-ml]: 2
+@[ukui-sidebar]: 4
+@[(o-client)]: 5
+@[ukui-volume-con]: 6
+@[ThreadPoolSingl]: 7
+@[polkitd]: 7
+@[chromium-browse]: 9
+@[sh]: 10
+@[fcitx]: 14
+@[QThread]: 15
+@[ThreadPoolForeg]: 18
+@[sogouImeService]: 22
+@[XEventMonitor]: 38
+@[kylin-sso-clien]: 51
+@[kylinssoclient]: 65
+@[cron]: 443
+
+11:09:20
+@[ThreadPoolSingl]: 6
+@[XEventMonitor]: 18
+@[fcitx]: 23
+@[QThread]: 24
+@[sogouImeService]: 38
+@[ThreadPoolForeg]: 50
+
+11:09:35
+@[QThread]: 6
+@[CacheThread_Blo]: 10
+@[fcitx]: 16
+@[XEventMonitor]: 16
+@[threaded-ml]: 37
+@[sogouImeService]: 83
+@[ThreadPoolForeg]: 162
+@[chromium-browse]: 200
+@[ThreadPoolSingl]: 799
+
+11:09:50
+@[(ionclean)]: 6
+@[ThreadPoolSingl]: 6
+@[pidof]: 7
+@[expr]: 7
+@[QThread]: 12
+@[fcitx]: 24
+@[phpquery]: 27
+@[chromium-browse]: 30
+@[find]: 33
+@[sogouImeService]: 36
+@[sort]: 54
+@[sessionclean]: 86
+@[ThreadPoolForeg]: 102
+@[sed]: 145
+@[systemd-journal]: 148
+@[php7.4]: 163
+
+11:10:05
+@[(o-client)]: 5
+@[polkitd]: 7
+@[ThreadPoolSingl]: 9
+@[chromium-browse]: 13
+@[bash]: 13
+@[ThreadPoolForeg]: 24
+@[sh]: 28
+@[kylinssoclient]: 37
+@[kylin-sso-clien]: 51
+@[systemd-journal]: 69
+@[cron]: 90
+
+11:10:20
+@[ThreadPoolSingl]: 3
+@[CacheThread_Blo]: 5
+@[(spatcher)]: 5
+@[chromium-browse]: 9
+@[01-ifupdown]: 11
+@[QThread]: 16
+@[ThreadPoolForeg]: 23
+@[systemd]: 35
+@[nm-dispatcher]: 40
+@[systemd-journal]: 82
+
+11:10:35
+@[chromium-browse]: 2
+@[threaded-ml]: 2
+@[ThreadPoolSingl]: 3
+@[QThread]: 5
+@[fcitx]: 29
+@[ukui-sidebar]: 37
+@[XEventMonitor]: 40
+@[sogouImeService]: 48
+@[ThreadPoolForeg]: 70
+@[ukui-volume-con]: 75
+
+11:10:50
+@[ThreadPoolSingl]: 3
+@[sogouImeService]: 10
+@[fcitx]: 15
+@[XEventMonitor]: 60
+@[ThreadPoolForeg]: 581
+
+11:11:05
+@[kylinssoclient]: 1
+@[systemd-journal]: 3
+@[polkitd]: 5
+@[(o-client)]: 5
+@[ThreadPoolSingl]: 6
+@[QThread]: 19
+@[ThreadPoolForeg]: 40
+@[gvfs-udisks2-vo]: 97
+@[kylin-sso-clien]: 102
+
+11:11:20
+@[ThreadPoolSingl]: 3
+@[QThread]: 8
+@[ThreadPoolForeg]: 9
+@[XEventMonitor]: 32
+@[ukui-sidebar]: 55
+
+
+
+@[QThread]: 4
+@[sogouImeService]: 11
+@[XEventMonitor]: 15
+@[ThreadPoolForeg]: 33
+@[killall]: 35
+@[nmbd]: 52
+@[smbd]: 280
+

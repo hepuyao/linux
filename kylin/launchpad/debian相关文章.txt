@@ -1,0 +1,9 @@
+debian参考手册
+https://www.debian.org/doc/manuals/debian-reference/
+
+
+相关社区协议规范：
+https://specifications.freedesktop.org/
+例如desktop文件书写规范
+https://specifications.freedesktop.org/desktop-entry-spec/1.4/
+

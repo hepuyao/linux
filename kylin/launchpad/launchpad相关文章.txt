@@ -1,0 +1,7 @@
+launchpad 相关文章平台
+http://zsk.kylin.com/
+例如：
+launchpad 编包  ：http://zsk.kylin.com/support/article/view/146
+禅道项目管理：http://zsk.kylin.com/support/article/view/147
+debian快速编包指南：http://zsk.kylin.com/support/article/view/175
+

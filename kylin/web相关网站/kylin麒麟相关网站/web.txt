@@ -1,1 +1,5 @@
-https://builder.kylin.com/  账号 hepuyao@kylinos.cn  密码 15411400234Hpy.
+https://builder.kylin.com/   iso构建网站
+http://zsk.kylin.com/  kylin知识库
+http://oa.kylinos.cn:5677/   oa网址
+http://172.17.66.192/  禅道
+https://doc.ubuntukylin.com/  内部文档管理平台

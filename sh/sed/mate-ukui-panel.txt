@@ -1,0 +1,10 @@
+ 
+sed -i "s/mate-panel/ukui-panel/g" `grep mate-panel -rl .`
+sed -i "s/mate_panel/ukui_panel/g" `grep mate_panel -rl .`
+sed -i "s/matepanel/ukuipanel/g" `grep matepanel -rl .`
+sed -i "s/MatePanel/UkuiPanel/g" `grep MatePanel -rl .`
+sed -i "s/MATE_PANEL/UKUI_PANEL/g" `grep MATE_PANEL -rl .`
+find . -name '*matepanel*' | xargs -i echo mv {} {} | sed 's/matepanel/ukuipanel/2' | sh
+find . -name '*mate-panel*' | xargs -i echo mv {} {} | sed 's/mate-panel/ukui-panel/2' | sh
+
+这是之前我替换mate-panel源码到ukui-panel时用的，你反过来操作

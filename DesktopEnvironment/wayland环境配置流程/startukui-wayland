@@ -1,0 +1,4 @@
+#!/bin/bash
+export QT_QPA_PLATFORM=xcb
+export GDK_BACKEND=x11
+/usr/bin/kwin_wayland --xwayland --no-lockscreen --exit-with-session=/usr/bin/ukui-session

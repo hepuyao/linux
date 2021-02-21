@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=/usr/bin/startukui-wayland
+#Exec=/usr/bin/kwin_wayland --xwayland --exit-with-session=/usr/bin/ukui-session
+DesktopNames=UKUI
+Name=UKUI (Wayland)
+Comment=UKUI wayland session

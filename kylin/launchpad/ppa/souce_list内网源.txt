@@ -4,6 +4,13 @@ deb http://archive.launchpad.dev/kylin-desktop v101 main restricted universe mul
 deb http://archive.launchpad.dev/kylin-desktop v101-updates main restricted universe multiverse
 deb http://archive.launchpad.dev/kylin-desktop v101-proposed main restricted universe multiverse
 
+deb-src http://archive.launchpad.dev/kylin v101 main restricted universe multiverse
+deb-src http://archive.launchpad.dev/kylin-desktop v101 main restricted universe multiverse
+deb-src http://archive.launchpad.dev/kylin-desktop v101-updates main restricted universe multiverse
+deb-src http://archive.launchpad.dev/kylin-desktop v101-proposed main restricted universe multiverse
+
+
+
 
 V10内网源（arm&x86）：
 deb http://archive.launchpad.dev/kord juniper main restricted universe multiverse

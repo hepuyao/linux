@@ -9,9 +9,7 @@ do
 	trayAppName=\'explorer.exe\'
 	echo $gsettingGetAppName
 	echo $trayAppName
-	if [ $gsettingGetAppName = $trayAppName ] 
-	then
-		gsettings set org.ukui.panel.tray:/org/ukui/tray/keybindings/custom${i}/ action tray
-	fi
+		gsettings set org.ukui.panel.tray:/org/ukui/tray/keybindings/custom${i}/ action storage
+		 gsettings set org.ukui.panel.tray:/org/ukui/tray/keybindings/custom${i}/ record storage
 done
 

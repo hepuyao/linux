@@ -7,4 +7,7 @@ mate-panel:
 mate-menu:
 名称：org.kylin.menu.session
 
+kylin-control-center:
+名称：org.ukui.ukcc.session
+
 

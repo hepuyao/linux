@@ -1,0 +1,50 @@
+{
+	"kylin-menu":{
+		"mode": "blacklist", 
+		"blacklist":[{ 
+			"pkgname": "ukui", 
+			"entries": [
+				{
+					"appname": "kylin-video", 
+					"path": "/usr/share/applications/kylin1.desktop"
+				},
+				{
+					"appname": "meld",
+					"path": "/usr/share/applications/gparted.desktop"
+				},
+				{
+					"appname": "meld",
+					"path": "/usr/share/applications/ppp.desktop"
+				},
+					{
+						"appname": "mate-terminal", 
+						"path": "/usr/share/applications/mate-terminal.desktop"
+					}
+			]
+		}
+			],
+		"whitelist": 
+			[{ 
+				"pkgname": "ukui", 
+				"entries":
+					[
+				    {
+					"appname": "k1",
+					"path": "/usr/share/applications/k1.desktop"
+				    },
+		            {
+						"appname": "ppp", 
+						"path": "/usr/share/applications/k2.desktop"
+					},
+				    {
+					"appname": "k1",
+					"path": "/usr/share/applications/pluma.desktop"
+				    },
+					{
+						"appname": "pluma", 
+						"path": "/usr/share/applications/k5.desktop"
+					}]
+			}]
+		}
+}
+

@@ -1,0 +1,228 @@
+{
+    "ukcc":[
+        {
+            "name": "personalization",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "autostart",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "defaultapp",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "timedates",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "useraccount",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "updatemanager",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "languagesupport",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "securitycenter",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "printer",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "powermanager",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "keyboard",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "sound",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "mouse",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "monitor",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "networkagent",
+            "visible": true,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        },
+        {
+            "name": "networkconnect",
+            "visible": false,
+            "childnode":[
+                {
+                    "nane": "二级菜单",
+                    "visible": true
+                },
+                {
+                    "name":"二级菜单",
+                    "visible":true
+                }
+            ]
+        }
+    ]
+}

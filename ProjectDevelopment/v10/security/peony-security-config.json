@@ -1,0 +1,82 @@
+{
+	"ukui-peony":{
+		"mode": "normalq",
+		"blacklist": [{
+			"pkgname": "test-pkg",
+			"entries": [
+				{
+					"appname": "firefox",
+					"path": "/usr/share/applications/firebox.desktop"
+				},
+				{
+					"appname": "code",
+					"path": "/usr/share/applications/test.desktop"
+				},
+				{
+					"appname": "d-feet",
+					"path": "/usr/share/applications/test1.desktop"
+				}
+			]
+		},
+		{
+			"pkgname": "test-pkg",
+			"entries": [
+				{
+					"appname": "kylin-update-manager",
+					"path": "/usr/share/applications/firebox.desktop"
+				},
+				{
+					"appname": "ubuntu-kylin-software-center",
+					"path": "/usr/share/applications/test.desktop"
+				}
+			]
+		}],
+		"whitelist": [{
+			"pkgname": "test-x",
+			"entries": [
+				{
+					"appname": "peony",
+					"path": "/usr/share/applications/peony.desktop"
+				},
+				{
+					"appname": "test-0",
+					"path": "/usr/share/applications/test-0.desktop"
+				},
+				{
+					"appname": "test-1",
+					"path": "/usr/share/applications/test-1.desktop"
+				},
+				{
+					"appname": "test-2",
+					"path": "/usr/share/applications/test-2.desktop"
+				}
+			]
+		},
+		{
+			"pkgname": "test-pkg",
+			"entries": [
+				{
+					"appname": "firebox11",
+					"path": "/usr/share/applications/firebox.desktop"
+				},
+				{
+					"appname": "test1",
+					"path": "/usr/share/applications/test.desktop"
+				}
+			]
+		},
+		{
+			"pkgname": "test-pkg-qqq",
+			"entries": [
+				{
+					"appname": "fireboxqqqq",
+					"path": "/usr/share/applications/firebox.desktop"
+				},
+				{
+					"appname": "testqqqq",
+					"path": "/usr/share/applications/test.desktop"
+				}
+			]
+		}]
+	}
+}

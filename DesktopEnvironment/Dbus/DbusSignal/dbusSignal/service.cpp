@@ -2,12 +2,17 @@
 
 Service::Service()
 {
-    QDBusConnection::sessionBus().unregisterService("com.ukui.panel.plugins.service");
-    QDBusConnection::sessionBus().registerService("com.ukui.panel.plugins.service");
-    QDBusConnection::sessionBus().registerObject("/taskbar/click", this,QDBusConnection :: ExportAllSlots | QDBusConnection :: ExportAllSignals);
-    QDBusConnection::sessionBus().connect(QString(), QString("/taskbar/click"), "com.ukui.panel.plugins.taskbar", "sendToUkuiDEApp", this, SLOT(service_get(QString)));
-    QDBusMessage message =QDBusMessage::createSignal("/taskbar/click", "com.ukui.panel.test", "sendToUkuiDEApp");
-    QDBusConnection::sessionBus().send(message);
+    QDBusConnection::sessionBus().unregisterService("org.ukui.test");
+    QDBusConnection::sessionBus().registerService("org.ukui.test");
+    QDBusConnection::sessionBus().registerObject("/", this,QDBusConnection :: ExportAllSlots | QDBusConnection :: ExportAllSignals);
+    QTimer *mTimer=new QTimer(this);
+    connect(mTimer, &QTimer::timeout, [this]{
+        QDBusMessage message =QDBusMessage::createSignal("/", "org.ukui.test", "DbusSingleTest");
+        message<<"dbus single test";
+        QDBusConnection::sessionBus().send(message);
+    });
+    mTimer->start(5000);
+
 }
 void Service::service_get(QString st)
 {

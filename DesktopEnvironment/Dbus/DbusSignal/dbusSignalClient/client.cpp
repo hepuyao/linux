@@ -8,12 +8,12 @@
 */
 Client::Client()
 {
-    QDBusConnection::sessionBus().connect(QString(), QString( "/taskbar/click"), "com.ukui.panel.plugins.taskbar", "sendToUkuiDEApp",this, SLOT(client_get(int)));
+    QDBusConnection::sessionBus().connect(QString(), QString( "/"), "org.ukui.test", "DbusSingleTest",this, SLOT(client_get(QString)));
 }
 
-void Client::client_get(int i)
+void Client::client_get(QString str)
 {
-    qDebug() << "Client get!"<<i;
+    qDebug() << "Client get!"<<str;
 }
 
 /*

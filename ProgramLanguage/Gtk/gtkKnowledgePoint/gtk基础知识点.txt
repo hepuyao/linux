@@ -1,0 +1,14 @@
+Makefile.am 链接动态库
+
+
+INCLUDES = \
+	`pkg-config --cflags dbus-glib-1 glib-2.0` \
+
+LIBS = \
+        $(DBUS_LIBS)                            \
+        $(DBUS_GLIB_LIBS)                       \
+        -ldbus-glib-1 \
+        `pkg-config --libs glib-2.0 gobject-2.0 gmodule-2.0 gio-2.0 gthread-2.0`
+
+
+
